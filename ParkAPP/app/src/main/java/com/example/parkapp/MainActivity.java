@@ -3,6 +3,7 @@ package com.example.parkapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -251,7 +252,7 @@ public class MainActivity extends BaseActivity {
                                                 parkCar.setParkTime(timeLong);//停车总时长
                                                 parkCar.setOutTime(TimeUtils.getNowMills());//出去的时间用系统时间
                                                 AppDataManager.getInstance().getAppDatabase().parkCarDao().updateParkCar(parkCar);
-                                                ToastUtils.showShort("车辆驶出成功，祝你一路顺风");
+                                                ToastUtils.showShort("收费成功，车辆驶出！");
                                             }
                                         }, null, false).show();
 
@@ -321,8 +322,9 @@ public class MainActivity extends BaseActivity {
                     String time = TimeUtils.getFitTimeSpan(System.currentTimeMillis(), parkCar.getEnterTime(), 3);
                     time = StringUtils.isEmpty(time) ? "0分钟" : time;
                     arrays[i] = (parkCar.getId() + 1) + ". " + parkCar.getNumber() + " (停车时长:" + time + ")";
+                    Log.d("a=",time);
                 }
-                new XPopup.Builder(getContext()).maxWidth(DisplayUtil.getWidth(MainActivity.this) - 100).asCenterList("停车场详情", arrays, new OnSelectListener() {
+                new XPopup.Builder(getContext()).maxWidth(DisplayUtil.getWidth(MainActivity.this) - 50).asCenterList("停车场详情", arrays, new OnSelectListener() {
                     @Override
                     public void onSelect(int position, String text) {
 
