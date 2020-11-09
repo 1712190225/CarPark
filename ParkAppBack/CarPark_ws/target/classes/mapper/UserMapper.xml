@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.test.dao.IUserDao">
+    <resultMap id="BaseResultMap" type="com.example.test.entity.User">
+    </resultMap>
+    <select id="findlogin" resultMap="BaseResultMap" parameterType="com.example.test.entity.User">
+        SELECT * from user where username=#{loginname}
+    </select>
+    <insert id="createuser" parameterType="com.example.test.entity.User">
+        insert into user (username,password )
+        values(#{loginname},#{password})
+    </insert>
+</mapper>
