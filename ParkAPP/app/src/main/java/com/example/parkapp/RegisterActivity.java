@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         public void run() {
 
             OkHttpClient mOkHttpClient = new OkHttpClient();
-            String url = "http://192.168.1.128:9099/user/createuser";
+            String url = "http://192.168.43.223:9099/user/createuser";
             FormBody formBody = new FormBody.Builder()
                     .add("loginname", ""+a)
                     .add("password", ""+b)
