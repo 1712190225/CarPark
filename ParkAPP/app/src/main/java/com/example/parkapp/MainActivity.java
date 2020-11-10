@@ -324,7 +324,7 @@ public class MainActivity extends BaseActivity {
                     arrays[i] = (parkCar.getId() + 1) + ". " + parkCar.getNumber() + " (停车时长:" + time + ")";
                     Log.d("a=",time);
                 }
-                new XPopup.Builder(getContext()).maxWidth(DisplayUtil.getWidth(MainActivity.this) - 50).asCenterList("停车场详情", arrays, new OnSelectListener() {
+                new XPopup.Builder(getContext()).maxWidth(DisplayUtil.getWidth(MainActivity.this) - 20).asCenterList("停车场详情", arrays, new OnSelectListener() {
                     @Override
                     public void onSelect(int position, String text) {
 
