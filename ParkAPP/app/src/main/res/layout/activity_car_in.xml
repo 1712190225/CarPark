@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@drawable/bg2">
+    android:background="@drawable/bg3">
 
 </LinearLayout>
